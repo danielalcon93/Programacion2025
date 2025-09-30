@@ -10,7 +10,7 @@ public class EjemploOperadoresAritmeticos {
         System.out.println("Suma= " + (numero1 + numero2) );
         System.out.println("Resta= " + (numero1 - numero2) );
         System.out.println("Multiplicación= " + (numero1 * numero2) );
-        System.out.println(("división= " + (numero1 / numero2) );
+        System.out.println(("división= " + (numero1 / numero2) ));
         System.out.println("Resto de la división= " + (numero1 % numero2) );
 
     }

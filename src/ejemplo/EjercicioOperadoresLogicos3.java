@@ -1,6 +1,6 @@
-package tema1;
+package ejemplo;
 
-public class EjercicioOperadoresLogicos2 {
+public class EjercicioOperadoresLogicos3 {
     public static void main(String[] args) {
 
         //Un cliente recibe un descuento especial si se cumplen estas condiciones:
@@ -10,16 +10,16 @@ public class EjercicioOperadoresLogicos2 {
 
         boolean clienteVip = true;
         double valorCompra = 120;
-        boolean esCumpleaños = false;
+        boolean esCumpleaños = true;
         boolean tienePagosPendientes = false;
-        boolean resultado;
+        boolean condicionesdescuento;
 
         //Dar valor a las variables de entrada
         //Poner la condición
         //Ver lo que debe dar y comprobar el resultado pintándolo
 
-        resultado = ((clienteVip) && (valorCompra >=100) || (!clienteVip) && (esCumpleaños) && (valorCompra >=50)) && (!tienePagosPendientes);
-        System.out.println("El cliente tiene descuento? " + resultado);
+        condicionesdescuento = ((clienteVip && valorCompra >100) || (!clienteVip && esCumpleaños && valorCompra >50)) && (!tienePagosPendientes);
+        System.out.println("El cliente tiene descuento? " + condicionesdescuento);
 
     }
 }

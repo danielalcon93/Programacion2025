@@ -14,7 +14,7 @@ public class EjemploOperadoresRelacionales {
     int num2 = 60;
     int num3 = 100;
 
-        System.out.println("Resultado 100>60 = " + num1>num2);
+        //System.out.println("Resultado 100>60 = " + num1>num2);
 
     }
 }
