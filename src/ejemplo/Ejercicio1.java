@@ -1,29 +1,18 @@
-package tema1;
+package EjerciciosRepaso;
 
 public class Ejercicio1 {
-    static void main(String[] args) {
 
-        int a = 6;
-        int b = 2;
-        int c = 3;
+        public int mayor ( int a, int b, int c){
+            int mayor = a;
 
-        int resultadoa;
-        int resultadob;
-        int resultadoc;
-        int resultadod;
-        int resultadoe;
+            if (b > mayor) {
+                mayor = b;
+            }
 
-        resultadoa =(a * b) % c;
-        resultadob =  a * b / c;
-        resultadoc = c % b + c * b;
-        resultadod = a % ( a * b * c / (b + c) );
-        resultadoe = b * b + c - b * (a % b );
+            if (c > mayor) {
+                mayor = c;
+            }
+            return mayor;
 
-        System.out.println(resultadoa);
-        System.out.println(resultadob);
-        System.out.println(resultadoc);
-        System.out.println(resultadod);
-        System.out.println(resultadoe);
-
+        }
     }
-}
