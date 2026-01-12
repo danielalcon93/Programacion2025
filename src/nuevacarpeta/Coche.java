@@ -1,66 +1,33 @@
-package tema4;
-
 public class Coche {
 
-    //Propiedades
-    private String marca;
-    private String modelo;
-    private String color;
-    private int anio;
-
-    //Constructor
-    public Coche(String marca, String modelo, String color, int anio) {
-        this.marca = marca;
-        this.modelo = modelo;
-        this.color = color;
-        this.anio = anio;
+    private int velocidad; //Atributo
+    Coche() { velocidad = 0;
     }
 
-    //Comportamiento
-    public String arrancar() {
-        return "Brrrr...";
+    //Devuelve la velocidad actual
+    public int getVelocidad() {
+        return velocidad;
     }
 
-    public String getMarca() {
-        return marca;
+    //Aumenta la velocidad
+    public void acelera(int velocidad) {
+        this.velocidad += velocidad;
     }
 
-    public void setMarca(String marca) {
-        this.marca = marca;
+    //Disminuye la velocidad
+    public void frena (int frenos) {
+        this.velocidad -= frenos;
     }
 
-    public int getAnio() {
-        return anio;
-    }
 
-    public void setAnio(int anio) {
-        this.anio = anio;
-    }
+    public static void main(String[] args) {
+        Coche coche = new Coche();
 
-    public String getColor() {
-        return color;
-    }
+        coche.acelera(50);
+        System.out.println("Velocidad: " + coche.getVelocidad());
 
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public String getModelo() {
-        return modelo;
-    }
-
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
-    }
-
-    @Override
-    public String toString() {
-        final StringBuffer sb = new StringBuffer("Coche{");
-        sb.append("marca='").append(marca).append('\'');
-        sb.append(", modelo='").append(modelo).append('\'');
-        sb.append(", color='").append(color).append('\'');
-        sb.append(", anio=").append(anio);
-        sb.append('}');
-        return sb.toString();
+        coche.frena(15);
+        System.out.println("Velocidad: " + coche.getVelocidad());
     }
 }
+
