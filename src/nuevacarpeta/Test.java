@@ -1,53 +1,33 @@
-package tema4;
+package Spotify;
 
 public class Test {
-
     public static void main(String[] args) {
-        /**
-         * 1. Crea un clase Personaje
-         * 2. Debe tener las siguientes propiedades (privadas):
-         * - nombre: String
-         * - clase: String
-         * - salud: int o Integer
-         * - mana: int o Integer
-         * 3. Crea un constructor que inicialice todas las propiedades
-         * 4. Crea los métodos getters y setters para todas las propiedades
-         * 5. Crea el toString para que pinte todas las propiedades (StringBuffer)
-         * 6. Crea un método void quitarSalud(int vida) que reste esa vida a la del personaje
-         * 7. Crea un método void revivir() que ponga la vida a 100.
-         * 8. Luego en el main de esta clase crea dos personajes diferentes pers1 y pers2
-         * 9. Quítale vida a uno de ellos, dejar uno sin vida, revivirlo
-         * 10. Pinta los dos personajes
-         *
-         * Extra:
-         * - Cuando el personaje ataque que quite vida en función del nivel
-         * Por ejemplo: damage * (1 + nivel * 0.15)
-         * Ojo, hay que pasar double a integer
-         * - Cuando la vida de un personaje llegue a 0, mostrar mensaje de muerto
-         * - Subir nivel:
-         *   a) Cambiamos MAX_SALUD a 200
-         *   b) Al crear un personaje le ponemos de vida MAX_SALUD / 4
-         *   c) Hacemos un método void subirNivel() que le sume uno al nivel
-         *   y sumo 20 de salud al personaje, sin exceder MAX_SALUD
-         *
-         */
 
-        Personaje pers1 = new Personaje("Gandalf", "Mago", 100, 50, 2);
-        Personaje pers2 = new Personaje("Conan", "Guerrero", 0, 60, 4);
+        //1. Crea una lista de Spotify de 10 canciones
+        Cancion c1 = new Cancion("La Perla", "Rosalia", 120);
+        Cancion c2 = new Cancion("Pikito", "Ozuna", 180);
+        Cancion c3 = new Cancion("Calenton", "Mora", 180);
+        Cancion c4 = new Cancion("Con Calma", "Daddy Yankee", 190);
+        Cancion c5 = new Cancion("No se quien sos", "Louta", 180);
+        Cancion c6 = new Cancion("OA", "Quevedo", 240);
 
-        pers1.atacar(pers2);
-        pers2.atacar(pers1);
 
-        System.out.println(pers1);
-        System.out.println(pers2);
 
-        pers1.atacar(pers2);
-        pers2.atacar(pers1);
+        //2. Píntala
+        System.out.println(c1);
+        System.out.println(c2);
+        System.out.println(c3);
+        System.out.println(c4);
+        System.out.println(c5);
+        System.out.println(c6);
 
-        //pers2.revivir();
+        //3. Recorre la lista con un for y pinta cada canción su título y autor solo
+        //4. Pide por teclado un título y un autor
+        //5. Elimina la canción de la lista con ese título y ese autor
 
-        System.out.println(pers1);
-        System.out.println(pers2);
+
+
+
 
     }
 }
