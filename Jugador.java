@@ -91,5 +91,52 @@ public class Jugador {
     }
 
     //Metodo para subir de nivel
-    
+    public void subirNivel() {
+        if (this.nivel < 10){
+            this.nivel++;
+            this.salud += Math.pow(2.5, nivel);
+        }
+    }
+
+    public boolean equipar(Arma arma) {
+        if (arma.isDosManos()) {
+            if (this.armaDerecha == null && this.armaIzquierda == null) {
+                this.armaDerecha = arma;
+                this.armaIzquierda = arma;
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        if (this.armaDerecha == null) {
+            this.armaDerecha = arma;
+            return true;
+        }
+
+        if (this.armaIzquierda == null) {
+            this.armaIzquierda = arma;
+            return true;
+        }
+
+        return false;
+    }
+
+    public void tomarPocion(int puntosS) {
+        this.salud += puntosS;
+        if (this.salud > 10000) {
+            this.salud = 10000;
+        }
+    }
+
+    public boolean reducirVida (int puntosD) {
+        this.salud -= puntosD;
+        if (this.salud <= 0) {
+            this.salud = 0;
+            return true;
+        }
+        return false;
+    }
+
+
 }
