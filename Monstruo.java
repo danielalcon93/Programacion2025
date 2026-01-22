@@ -76,6 +76,9 @@ public class Monstruo {
         return false;
     }
 
-
+    //Metodo golpear del monstruo
+    public boolean golpear (Jugador jugador) {
+        return jugador.reducirVida(this.puntosD);
+    }
 
 }

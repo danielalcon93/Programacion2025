@@ -1,5 +1,7 @@
 package Juego;
 
+import java.time.Month;
+
 public class Jugador {
 
     //Propiedades
@@ -98,6 +100,7 @@ public class Jugador {
         }
     }
 
+    //Metodo equipar un arma
     public boolean equipar(Arma arma) {
         if (arma.isDosManos()) {
             if (this.armaDerecha == null && this.armaIzquierda == null) {
@@ -122,6 +125,7 @@ public class Jugador {
         return false;
     }
 
+    //Metodo para tomar pocion
     public void tomarPocion(int puntosS) {
         this.salud += puntosS;
         if (this.salud > 10000) {
@@ -129,6 +133,7 @@ public class Jugador {
         }
     }
 
+    //Metodo para reducir la vida
     public boolean reducirVida (int puntosD) {
         this.salud -= puntosD;
         if (this.salud <= 0) {
@@ -138,5 +143,34 @@ public class Jugador {
         return false;
     }
 
+    //Metodo para golpear
+    public void golpear(Monstruo monstruo) {
+        if (this.getArmaDerecha() != null) {
+            monstruo.reducirVida(this.getArmaDerecha().getPuntosD());
+            if (!this.getArmaDerecha().isDosManos()) {
+                if (this.getArmaIzquierda() != null) {
+                    monstruo.reducirVida(this.getArmaIzquierda().getPuntosD());
+                }
+            }
+        }
+    }
+
+    //Metodo para comprobar si lo has matado
+    public boolean comprobarMuerte (Monstruo monstruo) {
+        return monstruo.getSalud() == 0;
+    }
+
+    //Subir la experiencia y el nivel si corresponde
+    public void subirExperiencia(Monstruo monstruo) {
+        this.experiencia += 10 * monstruo.getNivel();
+
+        if (this.experiencia > 1000) {
+            this.experiencia = 1000;
+        }
+
+        while (this.nivel < (this.experiencia / 100) + 1) {
+            subirNivel();
+        }
+    }
 
 }
