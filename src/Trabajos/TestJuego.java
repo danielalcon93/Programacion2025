@@ -22,9 +22,24 @@ public class TestJuego {
         Prueba p2 = new Prueba("derrotar orco", 8, 15);
         Prueba p3 = new Prueba("derrotar elfo oscuro", 10, 20);
 
-        //Probar juego
+        //Estado inicial
+        System.out.println("Energía inicial: " + n1.getEnergia());
 
+        //Enfrentarse a las pruebas
+        n1.lanzarHechizo("bola de fuego", p1);
+        System.out.println("Energía actual: " + n1.getEnergia());
 
+        n1.lanzarHechizo("rayo eléctrico", p2);
+        System.out.println("Energía actual: " + n1.getEnergia());
 
+        n1.lanzarHechizo("rayo eléctrico", p3);
+        System.out.println("Energía actual: " + n1.getEnergia());
+
+        //Comprobación final, para ver si el mago tiene energia o no
+        if (n1.getEnergia() <= 0) {
+            System.out.println("Energia insuficiente");
+        } else {
+            System.out.println("El mago ha podido realizar todos los hechizos");
+        }
     }
 }
