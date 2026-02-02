@@ -77,11 +77,8 @@ public class Granja {
     protected void calcularTotalHoras() {
         totalHorasOperacion = 0;
         for (Maquina m : maquinas) {
-            totalHorasOperacion += m.getHorasOperacion();
+            totalHorasOperacion += m.getHorasUso();
         }
     }
-
-
-
 
 }
